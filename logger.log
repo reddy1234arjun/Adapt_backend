@@ -1,0 +1,118 @@
+2025-07-07 12:13:09,824 - config - INFO - This is an info message
+2025-07-07 12:21:06,181 - config - INFO - This is an info message
+2025-07-07 12:22:18,505 - config - INFO - This is an info message
+2025-07-07 12:28:26,093 - config - INFO - This is an info message
+2025-07-07 12:28:28,216 - config - INFO - Starting FastAPI application...
+2025-07-07 12:34:46,364 - config - INFO - This is an info message
+2025-07-07 12:34:47,854 - config - INFO - Starting FastAPI application...
+2025-07-07 12:35:00,496 - config - INFO - This is an info message
+2025-07-07 12:35:01,870 - config - INFO - Starting FastAPI application...
+2025-07-07 12:35:35,162 - config - INFO - This is an info message
+2025-07-07 12:35:36,854 - config - INFO - Starting FastAPI application...
+2025-07-07 12:38:20,802 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-07-07 12:44:15,925 - config - INFO - This is an info message
+2025-07-07 12:44:25,322 - config - INFO - Starting FastAPI application...
+2025-07-07 12:45:22,396 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-07-07 12:46:05,643 - config - ERROR - Error Updating Email Flag status: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "ix_user_login_user_email"
+DETAIL:  Key (user_email)=(nag@gmail.com) already exists.
+
+[SQL: INSERT INTO user_login (user_login_id, user_id, user_fullname, user_email, user_password, user_role, passwd_status, login_attempts, login_timestamp, "Days180Flag", status) VALUES (%(user_login_id)s, %(user_id)s, %(user_fullname)s, %(user_email)s, %(user_password)s, %(user_role)s, %(passwd_status)s, %(login_attempts)s, %(login_timestamp)s, %(Days180Flag)s, %(status)s) RETURNING user_login.tstamp]
+[parameters: {'user_login_id': 'zihhvd', 'user_id': None, 'user_fullname': 'Nagarjuna reddy', 'user_email': 'nag@gmail.com', 'user_password': '$2b$12$jDaF7eIo8w.Dn4O4nZS9H.OdRV/gg9sCAyV0o/L31D1s/.pQpBr5.', 'user_role': 'role_4', 'passwd_status': 0, 'login_attempts': 0, 'login_timestamp': None, 'Days180Flag': 1, 'status': False}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-07-07 12:46:05,644 - config - ERROR - (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "ix_user_login_user_email"
+DETAIL:  Key (user_email)=(nag@gmail.com) already exists.
+
+[SQL: INSERT INTO user_login (user_login_id, user_id, user_fullname, user_email, user_password, user_role, passwd_status, login_attempts, login_timestamp, "Days180Flag", status) VALUES (%(user_login_id)s, %(user_id)s, %(user_fullname)s, %(user_email)s, %(user_password)s, %(user_role)s, %(passwd_status)s, %(login_attempts)s, %(login_timestamp)s, %(Days180Flag)s, %(status)s) RETURNING user_login.tstamp]
+[parameters: {'user_login_id': 'zihhvd', 'user_id': None, 'user_fullname': 'Nagarjuna reddy', 'user_email': 'nag@gmail.com', 'user_password': '$2b$12$jDaF7eIo8w.Dn4O4nZS9H.OdRV/gg9sCAyV0o/L31D1s/.pQpBr5.', 'user_role': 'role_4', 'passwd_status': 0, 'login_attempts': 0, 'login_timestamp': None, 'Days180Flag': 1, 'status': False}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "ix_user_login_user_email"
+DETAIL:  Key (user_email)=(nag@gmail.com) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\user\Desktop\nxt\Ecommerce_backend\routes\usermanagement\user_registation.py", line 203, in update_email_flag
+    copy_data(db, user.user_email)
+  File "c:\Users\user\Desktop\nxt\Ecommerce_backend\routes\usermanagement\user_registation.py", line 51, in copy_data
+    raise e
+  File "c:\Users\user\Desktop\nxt\Ecommerce_backend\routes\usermanagement\user_registation.py", line 43, in copy_data
+    db.commit()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2028, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "ix_user_login_user_email"
+DETAIL:  Key (user_email)=(nag@gmail.com) already exists.
+
+[SQL: INSERT INTO user_login (user_login_id, user_id, user_fullname, user_email, user_password, user_role, passwd_status, login_attempts, login_timestamp, "Days180Flag", status) VALUES (%(user_login_id)s, %(user_id)s, %(user_fullname)s, %(user_email)s, %(user_password)s, %(user_role)s, %(passwd_status)s, %(login_attempts)s, %(login_timestamp)s, %(Days180Flag)s, %(status)s) RETURNING user_login.tstamp]
+[parameters: {'user_login_id': 'zihhvd', 'user_id': None, 'user_fullname': 'Nagarjuna reddy', 'user_email': 'nag@gmail.com', 'user_password': '$2b$12$jDaF7eIo8w.Dn4O4nZS9H.OdRV/gg9sCAyV0o/L31D1s/.pQpBr5.', 'user_role': 'role_4', 'passwd_status': 0, 'login_attempts': 0, 'login_timestamp': None, 'Days180Flag': 1, 'status': False}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-07-07 12:50:55,335 - config - INFO - This is an info message
+2025-07-07 12:50:59,997 - config - INFO - This is an info message
+2025-07-07 12:51:01,012 - config - INFO - Starting FastAPI application...
+2025-07-07 12:51:09,110 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-07-07 12:57:51,796 - config - INFO - No productions found - Method: GET, Path: /apiv1/get-all-products/
+2025-07-07 13:03:26,050 - config - ERROR - Error creating product: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "stock_pkey"
+DETAIL:  Key (stockid)=() already exists.
+
+[SQL: INSERT INTO stock (stockid, productid, stockquantity, status) VALUES (%(stockid)s, %(productid)s, %(stockquantity)s, %(status)s) RETURNING stock.timestamp]
+[parameters: {'stockid': '', 'productid': 'prod_2', 'stockquantity': '', 'status': False}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
